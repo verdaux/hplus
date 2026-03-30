@@ -13,17 +13,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Customers")
+@Table(name = "Salespeople")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Customer
+public class Salespeople
 {
-	
 	@Id
-	@Column(name = "CUSTOMER_ID")
+	@Column(name = "SALESPERSON_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
@@ -45,5 +44,4 @@ public class Customer
 	private String state;
 	@Column(name = "ZIPCODE")
 	private String zipCode;
-	
 }

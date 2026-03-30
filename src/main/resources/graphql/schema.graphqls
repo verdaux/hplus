@@ -10,8 +10,51 @@ type Customer {
   zipCode: String!
 }
 
+input CustomerInput{
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+  city: String!
+  state: String!
+  zipCode: String!
+}
+
+type Salespeople {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+  city: String!
+  state: String!
+  zipCode: String!
+}
+
+input SalesPeopleInput{
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  address: String!
+  city: String!
+  state: String!
+  zipCode: String!
+}
+
 type Query{
   customers: [Customer]!
   customerById(id: ID): Customer
   customerByEmail(email: String): Customer
+  salespeople: [Salespeople]!
+  salespeopleById(id: ID): Salespeople
+  salespeopleByEmail(email: String): Salespeople
+}
+
+type Mutation
+{
+  addCustomer(input: CustomerInput): Customer
+  addSalesPeople(input: SalesPeopleInput): Salespeople
 }
