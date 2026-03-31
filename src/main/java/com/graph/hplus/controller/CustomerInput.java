@@ -2,7 +2,6 @@ package com.graph.hplus.controller;
 
 import com.graph.hplus.data.Customer;
 
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

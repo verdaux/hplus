@@ -22,6 +22,10 @@ public class OrderLine
 	@JoinColumn(name = "ORDER_ID", nullable = false, updatable = false)
 	private Order order;
 	
+	@ManyToOne
+	@JoinColumn(name = "PRODUCT_ID", nullable = false, updatable = false)
+	private Product product;
+	
 	@Column(name = "QUANTITY")
 	private int quantity;
 }

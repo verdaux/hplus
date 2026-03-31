@@ -44,6 +44,23 @@ input SalesPeopleInput{
   zipCode: String!
 }
 
+type Product {
+  id: ID!
+  name: String!
+  size: Int!
+  variety: String!
+  price: Float
+  status: String!
+}
+
+input ProductInput{
+  name: String!
+  size: Int!
+  variety: String!
+  price: Float
+  status: String!
+}
+
 type Query{
   customers: [Customer]!
   customerById(id: ID): Customer
@@ -51,10 +68,14 @@ type Query{
   salespeople: [Salespeople]!
   salespeopleById(id: ID): Salespeople
   salespeopleByEmail(email: String): Salespeople
+  products: [Product]!
+  productById(id: ID): Product
+  productByName(name: String): Product
 }
 
 type Mutation
 {
   addCustomer(input: CustomerInput): Customer
   addSalesPeople(input: SalesPeopleInput): Salespeople
+  addProduct(input: ProductInput): Product
 }
