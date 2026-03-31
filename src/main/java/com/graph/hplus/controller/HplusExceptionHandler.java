@@ -14,9 +14,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class HplusExceptionHandler extends SecurityDataFetcherExceptionResolver
 {
-
-    private final CustomerController customerController;
-
 	@Override
 	protected GraphQLError resolveToSingleError(Throwable ex, DataFetchingEnvironment env)
 	{

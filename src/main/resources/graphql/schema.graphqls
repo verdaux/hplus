@@ -61,6 +61,20 @@ input ProductInput{
   status: String!
 }
 
+type OrderLine {
+  id: ID!
+  order: Order
+  product: Product!
+  quantity: Int!
+}
+
+type Order {
+  id: ID!
+  customer: Customer!
+  salespeople: Salespeople!
+  orderLines: [OrderLine!]!
+}
+
 type Query{
   customers: [Customer]!
   customerById(id: ID): Customer
@@ -71,6 +85,8 @@ type Query{
   products: [Product]!
   productById(id: ID): Product
   productByName(name: String): Product
+  orders: [Order]!
+  orderById(id: ID): Order
 }
 
 type Mutation
